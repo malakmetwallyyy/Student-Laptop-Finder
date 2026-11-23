@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laptops | Student Laptop Finder</title>
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="saver">
+<header class="border-b border-slate-500/30 p-4">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
+    <a href="index.html" class="text-xl font-bold">Student Laptop Finder</a>
+    <button id="menuButton" class="btn-action border border-current md:hidden">Menu</button>
+    <nav id="mainNav" class="hidden w-full flex-col gap-3 md:flex md:w-auto md:flex-row">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="laptops.html">Laptops</a>
+      <a class="nav-link" href="favorites.html">Favorites</a>
+      <a class="nav-link" href="compare.html">Compare</a>
+    </nav>
+    <button id="themeButton" class="btn-action bg-brand text-white">Change Theme</button>
+  </div>
+</header>
+<main class="mx-auto max-w-6xl p-4 md:p-6">
+<h1 class="text-3xl font-bold">Laptop Catalogue</h1>
+<div class="panel my-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+  <input id="searchInput" type="search" placeholder="Search name or brand" aria-label="Search laptops">
+  <select id="categoryFilter" aria-label="Category">
+    <option value="">All categories</option><option>ultrabook</option><option>gaming</option><option>2-in-1</option><option>creator</option><option>budget</option>
+  </select>
+  <input id="maxPrice" type="number" min="0" placeholder="Maximum price" aria-label="Maximum price">
+  <input id="minRam" type="number" min="0" placeholder="Minimum RAM (GB)" aria-label="Minimum RAM">
+  <select id="sortSelect" aria-label="Sort laptops">
+    <option value="">Default order</option>
+    <option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option>
+    <option value="batteryHours-asc">Battery: low to high</option><option value="batteryHours-desc">Battery: high to low</option>
+    <option value="weightKg-asc">Weight: low to high</option><option value="weightKg-desc">Weight: high to low</option>
+  </select>
+</div>
+<p id="resultCount" class="muted mb-4">Loading laptops...</p>
+<div id="laptopList" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+<div id="laptopError" class="mt-4"></div>
+</main>
+<footer class="mt-10 border-t border-slate-500/30 p-5 text-center muted">Student Laptop Finder · 2026</footer>
+<script type="module" src="./src/js/laptops.js"></script>
+</body>
+</html>

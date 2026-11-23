@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare | Student Laptop Finder</title>
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="saver">
+<header class="border-b border-slate-500/30 p-4">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
+    <a href="index.html" class="text-xl font-bold">Student Laptop Finder</a>
+    <button id="menuButton" class="btn-action border border-current md:hidden">Menu</button>
+    <nav id="mainNav" class="hidden w-full flex-col gap-3 md:flex md:w-auto md:flex-row">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="laptops.html">Laptops</a>
+      <a class="nav-link" href="favorites.html">Favorites</a>
+      <a class="nav-link" href="compare.html">Compare</a>
+    </nav>
+    <button id="themeButton" class="btn-action bg-brand text-white">Change Theme</button>
+  </div>
+</header>
+<main class="mx-auto max-w-6xl p-4 md:p-6">
+<h1 class="text-3xl font-bold">Compare Favorites</h1>
+<p class="muted my-3">Select two to four laptops from your favorites.</p>
+<div id="compareChoices" class="panel mb-5">Loading favorites...</div>
+<p id="compareMessage" class="my-3 text-orange-600"></p>
+<div class="overflow-x-auto rounded-xl">
+  <table id="comparisonTable" class="w-full min-w-[600px] border-collapse text-left"></table>
+</div>
+</main>
+<footer class="mt-10 border-t border-slate-500/30 p-5 text-center muted">Student Laptop Finder · 2026</footer>
+<script type="module" src="./src/js/compare-page.js"></script>
+</body>
+</html>

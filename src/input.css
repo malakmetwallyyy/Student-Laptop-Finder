@@ -1,0 +1,83 @@
+
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@theme {
+  --color-brand: #064517;
+}
+
+/* Base styles */
+@layer base {
+  body {
+    @apply min-h-screen transition-colors duration-300;
+  }
+
+  /* Dark Theme */
+  body.performance {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  /* Light Theme */
+  body.saver {
+    @apply bg-gray-100 text-gray-900;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+/* Reusable component classes */
+@layer components {
+  .laptop-card {
+    @apply rounded-xl border p-4 shadow transition duration-200 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .btn-action {
+    @apply rounded-lg px-4 py-2 font-semibold transition duration-200 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+}
+
+/* Dark Theme */
+.performance .laptop-card {
+  @apply border-gray-700 bg-gray-800;
+}
+
+.performance .panel {
+  @apply rounded-xl border border-gray-700 bg-gray-800 p-5;
+}
+
+.performance .muted {
+  @apply text-gray-400;
+}
+
+.performance input,
+.performance select {
+  @apply border-gray-600 bg-gray-800 text-white;
+}
+
+.performance .nav-link {
+  @apply text-gray-200 hover:text-green-400;
+}
+
+/* Light Theme */
+.saver .laptop-card {
+  @apply border-gray-300 bg-white;
+}
+
+.saver .panel {
+  @apply rounded-xl border border-gray-300 bg-white p-5;
+}
+
+.saver .muted {
+  @apply text-gray-600;
+}
+
+.saver input,
+.saver select {
+  @apply border-gray-300 bg-white text-gray-900;
+}
+
+.saver .nav-link {
+  @apply text-gray-700 hover:text-brand;
+}
